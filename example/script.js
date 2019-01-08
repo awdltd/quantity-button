@@ -1,7 +1,5 @@
 import QuantityInput from '../quantity.js';
 
-console.log(QuantityInput);
-
 // Set up quantity forms
 (function() {
   let quantities = document.querySelectorAll('[data-quantity]');
@@ -9,6 +7,6 @@ console.log(QuantityInput);
   if(quantities instanceof Node) quantities = [quantities];
   if(quantities instanceof NodeList) quantities = [].slice.call(quantities);
   if(quantities instanceof Array) {
-    quantities.forEach((div) => div.quantity = new QuantityInput(div));
+    quantities.forEach(div => (div.quantity = new QuantityInput(div)));
   }
 })();

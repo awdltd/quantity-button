@@ -20,20 +20,20 @@ export default class QuantityInput {
       this.button.classList.add(className);
 
       return this.button;
-    };
+    }
 
     // Create buttons
     this.subtract = new Button('Decrease quantity', 'sub');
     this.add = new Button('Increase quantity', 'add');
 
+    // Add functionality to buttons
+    this.subtract.addEventListener('click', () => this.change_quantity(-1));
+    this.add.addEventListener('click', () => this.change_quantity(1));
+
     // Add input and buttons to wrapper
     self.appendChild(this.subtract);
     self.appendChild(this.input);
     self.appendChild(this.add);
-
-    // Add functionality to buttons
-    this.subtract.addEventListener('click', () => this.change_quantity(-1));
-    this.add.addEventListener('click', () => this.change_quantity(1));
   }
 
   change_quantity(change) {
