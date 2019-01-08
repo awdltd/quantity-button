@@ -5,7 +5,7 @@ JavaScript snippet to create a super-light-weight (1.49kb uncompressed, 0.71kb c
 
 ## Installation ##
 
-You can install either by copying the files from this repository or running `npm i @ohepworthbell\quantityinput`.
+You can install either by copying the files from this repository or running `npm i @ohepworthbell\quantityinput`
 
 
 ## How to use it ##
