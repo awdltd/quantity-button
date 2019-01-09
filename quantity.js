@@ -4,15 +4,17 @@
  *  @param {DOMobject} element to create a quantity wrapper around
  */
 export default class QuantityInput {
-  constructor(self) {
+  constructor(self, decreaseText, increaseText) {
     // Create input
     this.input = document.createElement('input');
     this.input.value = 1;
     this.input.type = 'number';
     this.input.name = 'quantity';
+    this.decreaseText = decreaseText || 'Decrease quantity';
+    this.increaseText = increaseText || 'Increase quantity';
 
     // Button constructor
-    function Button(text, className) {
+    function Button(text, className){
       this.button = document.createElement('button');
       this.button.type = 'button';
       this.button.innerHTML = text;
@@ -23,8 +25,8 @@ export default class QuantityInput {
     }
 
     // Create buttons
-    this.subtract = new Button('Decrease quantity', 'sub');
-    this.add = new Button('Increase quantity', 'add');
+    this.subtract = new Button(this.decreaseText, 'sub');
+    this.add = new Button(this.increaseText, 'add');
 
     // Add functionality to buttons
     this.subtract.addEventListener('click', () => this.change_quantity(-1));
@@ -41,7 +43,7 @@ export default class QuantityInput {
     let quantity = Number(this.input.value);
 
     // Ensure quantity is a valid number
-    if(isNaN(quantity)) quantity = 1;
+    if (isNaN(quantity)) quantity = 1;
 
     // Change quantity
     quantity += change;
