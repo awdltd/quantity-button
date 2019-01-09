@@ -12,7 +12,7 @@ You can install either by copying the files from this repository or running `npm
 
 HTML
 ```html
-<div id="your-element"></div>
+<fieldset id="your-element"></fieldset>
 ```
 
 Javascript
@@ -20,13 +20,24 @@ Javascript
 // Import (or include) QuantityInput.js
 import QuantityInput from './quantityinput.js';
 
+// Basic call
+/**
+ * @class
+ * @function QuantityInput
+ * @param element the wrapping element to display the form
+ * @param {String} decreaseText (optional) the text to show in the 'decrease' button
+ * @param {String} increaseText (optional) the text to show in the 'increase' button
+ */
+let quantityInput1 = new QuantityInput(element);
+let quantityInput2 = new QuantityInput(element, decreaseText, increaseText);
+
 // jQuery
-let element = $('div#your-element')[0];
-element.quantity = new QuantityInput(element));
+let element = $('#your-element')[0];
+element.quantity = new QuantityInput(element, 'Decrease Quantity', 'Increase Quantity'));
 
 // Vanilla
 let element = document.getElementById('your-element');
-element.quantity = new QuantityInput(element));
+element.quantity = new QuantityInput(element, 'Decrease Quantity', 'Increase Quantity'));
 ```
 
 
