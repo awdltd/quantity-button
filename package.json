@@ -1,6 +1,6 @@
 {
   "name": "@ohepworthbell/quantityinput",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add a better quantity input element to forms using pure JavaScript",
   "license": "GNU",
   "repository": "awdltd/quantity-button",
