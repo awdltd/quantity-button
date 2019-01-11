@@ -10,6 +10,9 @@ export default class QuantityInput {
     this.input.value = 1;
     this.input.type = 'number';
     this.input.name = 'quantity';
+    this.input.pattern = '[0-9]+';
+
+    // Get text for buttons
     this.decreaseText = decreaseText || 'Decrease quantity';
     this.increaseText = increaseText || 'Increase quantity';
 
