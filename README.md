@@ -12,31 +12,27 @@ You can install either by copying the files from this repository or running `npm
 
 HTML
 ```html
-<fieldset id="your-element"></fieldset>
+<quantity-input></quantity-input>
 ```
 
 Javascript
 ```javascript
-// export default class QuantityInput { ... }
-
 // Import QuantityInput.js (ES6)
 import QuantityInput from './quantityinput.js';
 
-// Get element to add QuantityInput to
-let element = document.getElementById('your-element');
+// Define custom element
+window.customElements.define('quantity-input', QuantityInput);
 
 /**
  * @class
  * @function QuantityInput
- * @param element the wrapping element to display the form
  * @param {String} decreaseText (optional) text for 'decrease' button
  * @param {String} increaseText (optional) text for 'increase' button
  */
-new QuantityInput(element);
-new QuantityInput(element, decreaseText, increaseText);
+let element = new QuantityInput(decreaseText, increaseText);
 
-// Example
-element.changeQuantity = new QuantityInput(element, 'Minus 1', 'Add 1'));
+// Append to where-ever
+document.body.appendChild(element);
 ```
 
 
